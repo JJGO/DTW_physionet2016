@@ -4,23 +4,21 @@ This is the code repository for our Dynamic Time Warping based classifier submit
 
 The code includes Python scripts for:
 
-* Computing intrinsic DTW features for a PCG recording
-* Clustering recordings based on DTW similarity and deriving
-* Obtaining MFCC features tuned for Phonocardiograms
+* Computing intrinsic DTW features for the RR intervals of a PCG recording. Features can also be extracted for individual heart sounds.
+* Clustering recordings based on DTW distance and deriving interDTW features that measure the similarity between two PCG recordings.
+* Obtaining MFCC features specially8 tuned for Phonocardiograms.
 * Training sklearn models from the features described above as well as other ones such as wavelets
 * Custom cross validation for unbalanced databases with potentially different sizes recording databases
 * Exhaustive and customizable experiment design suite with training, validation and testing
-* Caching of most results and feature set to speed up model training on known features
+* Caching of most results and feature sets to speed up model training and testing.
 
-
-The Physionet 2016 dataset can be found [here](http://physionet.org/challenge/2016/)
-
-The implementation also requires `Cython` so if you do not have it installed you will need to run
+The Physionet 2016 dataset can be found [here](http://physionet.org/challenge/2016) and the code used for the PCG segmentation [here](http://physionet.org/physiotools/hss)
 
 ## Installation
 
 The package requires Python >=3.3 since it uses the [multiprocessing](https://docs.python.org/3.5/library/multiprocessing.html) package to release the GIL.
 
+The implementation also requires `Cython` so if you do not have it installed you will need to install it
 
 ```sh
 pip install Cython
